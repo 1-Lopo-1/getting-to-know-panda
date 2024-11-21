@@ -1,6 +1,5 @@
 import pandas as pd
 import xlsxwriter
-import openpyxl
 
 list_price = {"price": []}
 list_product_name = {"name": []}
@@ -23,5 +22,3 @@ ful_data_frame = df_name.join(df_price)
 # Не работает когда уже запущен xl файл
 with pd.ExcelWriter("myFile.xlsx", engine="xlsxwriter", mode="w") as writer:
     ful_data_frame.to_excel(writer, index=False, sheet_name="infoList")
-
-# ful_data_frame.to_excel(ex_write, float_format="%.1f", columns=["name", "price"])
