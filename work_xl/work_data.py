@@ -20,7 +20,7 @@ df_name = pd.DataFrame(list_product_name)
 # Добавляем к первому frama второго
 ful_data_frame = df_name.join(df_price)
 
-# Разобрать то почему это работало и почему не работает сейчас и как оно работало, и как починить
+# Не работает когда уже запущен xl файл
 with pd.ExcelWriter("myFile.xlsx", engine="xlsxwriter", mode="w") as writer:
     ful_data_frame.to_excel(writer, index=False, sheet_name="infoList")
 
